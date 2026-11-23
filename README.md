@@ -12,13 +12,15 @@ The public report describes the method as a whole.
 
 ```mermaid
 flowchart LR
-  S[1. Surrogate model<br/>blast law + masking] --> X[2. A few expensive<br/>simulations]
-  X --> G[3. GP on the residuals<br/>simulator − surrogate]
-  G --> R[4. Shortest path<br/>on the corrected map]
-  R --> Q{6. Uncertainty along<br/>the route below 5 %?}
-  Q -- no --> A[5. Path-coupled<br/>acquisition]
+  S[1. Scene<br/>buildings, terrain, start A, end B] --> K[2. Cheap surrogate<br/>blast law + building masking<br/>3D: raycasting, terrain]
+  K --> I[3. Initial design<br/>15 points, Latin hypercube]
+  I --> X[4. Simulation<br/>2D: ARMEN, 3D: on a cluster<br/>then damage score: 20 to 300 hPa × building weights]
+  X --> G[5. GP on the residuals<br/>simulator − surrogate]
+  G --> R[6. Shortest path<br/>2D: Delta-Stepping<br/>3D: directional A*, turn and slope penalties]
+  R --> Q{7. Stop?<br/>2D: σ cum,rel below 5 %<br/>or 19 simulations}
+  Q -- no --> A[8. Next point<br/>2D: path-coupled corridor<br/>3D: UCB on danger]
   A --> X
-  Q -- yes --> D[Route]
+  Q -- yes --> D[9. Route A to B<br/>+ stability: Hausdorff distance]
 ```
 
 A more detailed version, with the pipeline modules, is in the public report (figure 1).
