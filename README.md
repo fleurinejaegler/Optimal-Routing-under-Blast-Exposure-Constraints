@@ -65,8 +65,3 @@ For the demo: `cd demo && node --test tests/*.test.js` (Node ≥ 20).
 ## Demo
 
 The `demo/` folder contains an interactive demo of the full method, from the surrogate law to the acquisition loop. It replaces the confidential simulator with a simple 2D acoustic solver. The demo's README describes the modelling choices and limitations in detail.
-
-## Licence
-
-- `demo/`: MIT (© Tancrède Amiel).
-- Rest of the repository: to be decided.
