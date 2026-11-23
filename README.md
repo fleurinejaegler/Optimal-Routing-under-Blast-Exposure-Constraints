@@ -2,7 +2,7 @@
 
 Project carried out in 2026 at CentraleSupélec, in partnership with CEA-DAM: find the route from A to B that minimises the cumulative damage caused by an accidental detonation along the way. The method combines an analytical surrogate, a Gaussian process that learns the surrogate's errors, a shortest-path search, and a loop that decides where to run the next expensive simulation.
 
-[Demo]([https://linkedin.com/in/fleurine-jaegler](https://fleurinejaegler.github.io/Optimal-Routing-under-Blast-Exposure-Constraints/demo/))
+[Demo]([https://fleurinejaegler.github.io/Optimal-Routing-under-Blast-Exposure-Constraints/demo/])
 
 ## How the method works
 
