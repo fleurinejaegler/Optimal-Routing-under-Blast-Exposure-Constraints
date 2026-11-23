@@ -21,6 +21,12 @@ export function isDark() { return cssVar('--scheme') === 'dark'; }
 
 function hex(h) { const n = parseInt(h.slice(1), 16); return [n >> 16, (n >> 8) & 255, n & 255]; }
 
+// Text colour that stays readable on a building of colour `fill`: white on dark fills, dark on light ones.
+function labelOn(fill) {
+  const [r, g, b] = hex(fill);
+  return 0.299 * r + 0.587 * g + 0.114 * b < 150 ? '#FFFFFF' : '#1B2430';
+}
+
 export function makeLUT(stops, dark = isDark()) {
   const s = (dark ? [...stops].reverse() : stops).map(hex);
   const lut = new Uint8ClampedArray(256 * 3);
@@ -200,11 +206,11 @@ export class MapView {
       g.strokeRect(Math.round(X(b.x)) + 0.5, Math.round(Y(b.y)) + 0.5, Math.round(b.w * k) - 1, Math.round(b.h * k) - 1);
       if (b.cat === 4) {          // a small cross: clinic or fire station
         const cx = X(b.cx), cy = Y(b.cy) - k * 1.6, s = Math.min(Math.min(b.w, b.h) * k * 0.08, 9);
-        g.fillStyle = C.ink;
+        g.fillStyle = labelOn(C.cat[b.cat]);
         g.fillRect(cx - s, cy - s / 3, 2 * s, 2 * s / 3); g.fillRect(cx - s / 3, cy - s, 2 * s / 3, 2 * s);
       }
       if (Math.min(b.w, b.h) * k >= 22) {
-        g.fillStyle = C.ink; g.font = `${Math.max(9, Math.min(11, k * 1.3))}px ${this.font}`;
+        g.fillStyle = labelOn(C.cat[b.cat]); g.font = `${Math.max(9, Math.min(11, k * 1.3))}px ${this.font}`;
         g.textAlign = 'center'; g.textBaseline = 'middle';
         g.fillText('×' + b.d, X(b.cx), Y(b.cy) + (b.cat === 4 ? k * 2 : 0));
       }

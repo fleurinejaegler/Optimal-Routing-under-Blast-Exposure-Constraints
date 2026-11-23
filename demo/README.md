@@ -6,7 +6,7 @@ Find the route for moving a device that may detonate from where it was found (A)
 
 [![tests](https://github.com/tancredea/blast-routing-demo/actions/workflows/test.yml/badge.svg)](https://github.com/tancredea/blast-routing-demo/actions/workflows/test.yml)
 
-![A finished run on seed 42: danger map, simulation points, first-guess and final routes, and the result card](docs/screenshot.png)
+![The demo at its start on seed 42: buildings coloured by criticality, the disposal site B, and the mini-maps](docs/screenshot.png)
 
 > **This is a toy.** It reimplements, from scratch and with public equations only, the method of a confidential academic project carried out with CEA-DAM. The original code ran only on CEA-DAM's supercomputer around its proprietary simulator ARMEN, so it can be neither published nor run elsewhere. Here a simple 2D acoustic solver replaces ARMEN; **the procedure around it is the same**. Not affiliated with or endorsed by CEA-DAM.
 
@@ -117,7 +117,7 @@ js/acquisition.js         corridor, acquisition score, stopping rule
 js/pipeline.js            glue shared by the page and the headless test
 js/render.js              canvas layers, colour ramps, mini-maps, legends
 js/narration.js           step texts
-fonts/                    Space Grotesk, IBM Plex Mono (SIL OFL)
+fonts/                    IBM Plex Sans, IBM Plex Mono (SIL OFL)
 tests/                    node --test files, browser runner and shims
 ```
 
@@ -155,7 +155,7 @@ This is how it is embedded on the [demo page](https://tancredea.github.io/projec
 
 - Demo: Tancrède Amiel.
 - Original project: a team of six CentraleSupélec students, with technical and scientific supervision from CEA-DAM and an academic referent at CentraleSupélec. The [project page](https://tancredea.github.io/projects/blast-routing/) has the details.
-- Fonts: Space Grotesk and IBM Plex Mono (SIL OFL, licenses in `fonts/`).
+- Fonts: IBM Plex Sans and IBM Plex Mono (SIL OFL, licenses in `fonts/`).
 
 ## Disclaimer
 
