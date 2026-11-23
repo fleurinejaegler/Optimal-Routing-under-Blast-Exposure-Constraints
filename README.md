@@ -2,15 +2,13 @@
 
 Project carried out in 2026 at CentraleSupélec, in partnership with CEA-DAM: find the route from A to B that minimises the cumulative damage caused by an accidental detonation along the way. The method combines an analytical surrogate, a Gaussian process that learns the surrogate's errors, a shortest-path search, and a loop that decides where to run the next expensive simulation.
 
-## ⚠️ Confidentiality
+## Confidentiality
 
 This project was carried out under a confidentiality agreement with CEA-DAM. **Much of the original code is confidential and is not published here**: the simulator and its integration, the supercomputer job scripts, the scene and simulation data, the mesh processing, and the 3D part of the pipeline. Only general components that do not depend on any project data are published.
 
 The public report describes the method as a whole.
 
 ## How the method works
-
-Diagram adapted from the demo by Tancrède Amiel (see `demo/README.md`):
 
 ```mermaid
 flowchart LR
@@ -67,8 +65,6 @@ For the demo: `cd demo && node --test tests/*.test.js` (Node ≥ 20).
 ## Demo
 
 The `demo/` folder contains an interactive demo of the full method, from the surrogate law to the acquisition loop. It replaces the confidential simulator with a simple 2D acoustic solver. The demo's README describes the modelling choices and limitations in detail.
-
-The demo is an independent rewrite by **Tancrède Amiel**, based on public equations. It is released under the MIT licence (`demo/LICENSE`). It is not affiliated with CEA-DAM or CentraleSupélec.
 
 ## Licence
 
