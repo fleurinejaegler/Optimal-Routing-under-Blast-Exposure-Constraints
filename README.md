@@ -5,7 +5,7 @@ Project carried out in 2026 at CentraleSupélec, in partnership with CEA-DAM: fi
 
 ## Demo
 
-The `demo/` folder contains an interactive demo of the full method, from the surrogate law to the acquisition loop. It replaces the confidential simulator with a simple 2D acoustic solver. The demo's README describes the modelling choices and limitations in detail.
+The `demo/` folder contains an interactive demo of the full method, from the surrogate law to the acquisition loop. It replaces the confidential simulator with a simple 2D acoustic solver. Its convergence figures differ from those in the report.
 
 [To see the demo](https://fleurinejaegler.github.io/Optimal-Routing-under-Blast-Exposure-Constraints/demo/)
 
